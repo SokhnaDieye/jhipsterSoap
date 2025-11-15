@@ -16,6 +16,14 @@ import org.springframework.xml.xsd.XsdSchema;
 @Configuration
 public class WebServiceConfig extends WsConfigurerAdapter {
 
+    @Bean
+    public ServletRegistrationBean<MessageDispatcherServlet> messageDispatcherServlet(ApplicationContext applicationContext) {
+        MessageDispatcherServlet servlet = new MessageDispatcherServlet();
+        servlet.setApplicationContext(applicationContext);
+        servlet.setTransformWsdlLocations(true);
+        return new ServletRegistrationBean<>(servlet, "/ws/*");
+    }
+
     @Bean(name = "banque")
     public DefaultWsdl11Definition banqueWsdl(XsdSchema banqueSchema) {
         DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
@@ -26,7 +34,7 @@ public class WebServiceConfig extends WsConfigurerAdapter {
         return wsdl11Definition;
     }
 
-    @Bean(name = "schema")
+    @Bean
     public XsdSchema banqueSchema() {
         return new SimpleXsdSchema(new ClassPathResource("schema/schema.xsd"));
     }

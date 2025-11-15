@@ -148,7 +148,7 @@ spring:
           group: ms-2
   docker:
     compose:
-      enabled: true
+      enabled: false
       lifecycle-management: start-only
       file: src/main/docker/mysql.yml
   profiles:
