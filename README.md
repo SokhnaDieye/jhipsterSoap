@@ -1,4 +1,6 @@
 # ms2
+<img width="1869" height="990" alt="image" src="https://github.com/user-attachments/assets/c59b996a-293e-420f-a22d-ccddbbbf6eed" />
+
 
 This application was generated using JHipster 8.11.0, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v8.11.0](https://www.jhipster.tech/documentation-archive/v8.11.0).
 
